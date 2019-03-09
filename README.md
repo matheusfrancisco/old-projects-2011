@@ -16,8 +16,8 @@ Going back to programming in 2014 thanks to the Computer Engineering course I wi
 ## Delphi projects
 
 ### Simple getting started 
-(click here)[https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/StartedInDelphi(old)]
+[click here](https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/StartedInDelphi(old))
 ### Trafic Light
-(click here)[https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/TrafficLightProject]
+[click here](https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/TrafficLightProject)
 ### Doctor's office
-(click here)[https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/ProjetoConsultorio]
+[click here](https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/ProjetoConsultorio)
