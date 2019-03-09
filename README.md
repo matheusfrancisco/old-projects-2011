@@ -35,3 +35,15 @@ Simple calculator in java  [click here](Java-projects/Calculator/)
 ## Programming logic in Visualg
 
 Simple code in visualg [click here](programming-logic-visualg/)
+
+---
+
+## Unity projects
+
+### Box-texture
+[click here](Unity-projects/Box-texture/)
+### Ship-2D-game
+[click here](Unity-projects/Ship-2D-game/)
+### Shooting-game
+[click here](Unity-projects/Shooting-game/)
+
