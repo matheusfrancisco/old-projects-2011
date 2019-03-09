@@ -29,3 +29,7 @@ Learning basics about java  [click here](Java-projects/Code-in-Java)
 
 ### Calculator
 Simple calculator in java  [click here](Java-projects/Calculator/)
+
+## Programming logic in Visualg
+
+Simple code in visualg [click here](programming-logic-visual/)
