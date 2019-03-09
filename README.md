@@ -32,4 +32,4 @@ Simple calculator in java  [click here](Java-projects/Calculator/)
 
 ## Programming logic in Visualg
 
-Simple code in visualg [click here](programming-logic-visual/)
+Simple code in visualg [click here](programming-logic-visualg/)
