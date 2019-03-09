@@ -27,9 +27,11 @@ Going back to programming in 2014 thanks to the Computer Engineering course I wi
 ## Java projects
 
 ### Code getting started
+
 Learning basics about java  [click here](Java-projects/Code-in-Java)
 
 ### Calculator
+
 Simple calculator in java  [click here](Java-projects/Calculator/)
 ---
 ## Programming logic in Visualg
@@ -47,3 +49,9 @@ Simple code in visualg [click here](programming-logic-visualg/)
 ### Shooting-game
 [click here](Unity-projects/Shooting-game/)
 
+---
+
+## Php projects
+
+### Virtual store 
+[click here](Php-projetct/php-loja-virtual)
