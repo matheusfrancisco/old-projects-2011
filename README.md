@@ -21,3 +21,11 @@ Going back to programming in 2014 thanks to the Computer Engineering course I wi
 [click here](https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/TrafficLightProject)
 ### Doctor's office
 [click here](https://github.com/matheusfrancisco/old-projects-2011/tree/master/Delphi-projects/ProjetoConsultorio)
+
+## Java projects
+
+### Code getting started
+Learning basics about java  [click here](Java-projects/Code-in-Java)
+
+### Calculator
+Simple calculator in java  [click here](Java-projects/Calculator/)
