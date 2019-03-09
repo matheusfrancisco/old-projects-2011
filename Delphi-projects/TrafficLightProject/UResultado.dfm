@@ -1,0 +1,85 @@
+object FRM_Resultado: TFRM_Resultado
+  Left = 0
+  Top = 0
+  Caption = 'FRM_Resultado'
+  ClientHeight = 286
+  ClientWidth = 426
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clRed
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object LBL_Resultado: TLabel
+    Left = 184
+    Top = 16
+    Width = 198
+    Height = 25
+    AutoSize = False
+    Caption = 'Resulto Final'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clAqua
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LBL_Acertos: TLabel
+    Left = 32
+    Top = 67
+    Width = 85
+    Height = 23
+    AutoSize = False
+    Caption = 'Acertos:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LBL_VR_Acertos: TLabel
+    Left = 144
+    Top = 67
+    Width = 85
+    Height = 22
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LBL_Erros: TLabel
+    Left = 32
+    Top = 107
+    Width = 63
+    Height = 23
+    AutoSize = False
+    Caption = 'Erros:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LBL_VR_Erros: TLabel
+    Left = 144
+    Top = 105
+    Width = 25
+    Height = 22
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+end

@@ -1,0 +1,40 @@
+unit UConsultas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Consultas = class(TFRM_Cadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Data: TDBEdit;
+    DBL_Paciente: TDBLookupComboBox;
+    DBL_Medico: TDBLookupComboBox;
+    DBLookupComboBox3: TDBLookupComboBox;
+    DS_Paciente: TDataSource;
+    DS_Medico: TDataSource;
+    DataSource3: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Consultas: TFRM_Consultas;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

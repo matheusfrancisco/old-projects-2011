@@ -1,0 +1,160 @@
+unit UCadastro;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UPadrao, DB, ExtCtrls, DBCtrls, ImgList, StdCtrls, ToolWin, ComCtrls,
+  Buttons, Grids, DBGrids;
+
+type
+  TFRM_Cadastro = class(TFRM_Padrao)
+    GBX_Cadastro: TGroupBox;
+    GBX_Consulta: TGroupBox;
+    IMG_Cadastro: TImageList;
+    TB_Cadastro: TToolBar;
+    DBN_Cadastro: TDBNavigator;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    BT_Novo: TToolButton;
+    BT_Salvar: TToolButton;
+    BT_Alterar: TToolButton;
+    BT_Cancelar: TToolButton;
+    ToolButton7: TToolButton;
+    BT_Excluir: TToolButton;
+    ToolButton9: TToolButton;
+    BT_Sair: TToolButton;
+    EDT_Consulta: TEdit;
+    CBX_Consulta: TComboBox;
+    DBG_Consulta: TDBGrid;
+    SBT_Pesquisar: TSpeedButton;
+    CBX_TipoConsulta: TComboBox;
+    procedure FormShow(Sender: TObject);
+  procedure AtivarBotoes(AEdicao:Boolean);
+    procedure BT_NovoClick(Sender: TObject);
+    procedure BT_SalvarClick(Sender: TObject);
+    procedure BT_AlterarClick(Sender: TObject);
+    procedure BT_CancelarClick(Sender: TObject);
+    procedure BT_ExcluirClick(Sender: TObject);
+    procedure BT_SairClick(Sender: TObject);
+    procedure SBT_PesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    TipoDado:integer;   // 1 - numeric
+                        // 2 - character
+                        // 3 - data
+    { Public declarations }
+  end;
+
+var
+  FRM_Cadastro: TFRM_Cadastro;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRM_Cadastro.AtivarBotoes(AEdicao: Boolean);
+begin
+DBN_Cadastro.Enabled := not AEdicao;
+BT_Novo.Enabled := not AEdicao;
+BT_Salvar.Enabled := AEdicao;
+BT_Alterar.Enabled := not AEdicao;
+BT_Cancelar.Enabled := AEdicao;
+BT_Excluir.Enabled := not AEdicao;
+BT_Sair.Enabled := not AEdicao;
+
+end;
+
+procedure TFRM_Cadastro.BT_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  if DS_Generico.DataSet.IsEmpty then
+    Exit;
+  DS_Generico.DataSet.Edit;
+  AtivarBotoes(True);
+end;
+
+procedure TFRM_Cadastro.BT_CancelarClick(Sender: TObject);
+begin
+  inherited;
+ AtivarBotoes(False);
+ DS_Generico.DataSet.Cancel;
+end;
+
+procedure TFRM_Cadastro.BT_ExcluirClick(Sender: TObject);
+begin
+  inherited;
+    if DS_Generico.DataSet.IsEmpty then
+      Exit;
+    if MessageDlg('Confirma exclusão do '+' registro atual?',
+    mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+      begin
+        if DS_Generico.DataSet.IsEmpty then Exit;
+      DS_Generico.DataSet.Edit;
+      DS_Generico.DataSet.Delete;
+      DS_Generico.DataSet.Close;
+      DS_Generico.DataSet.Open;
+      end;
+
+
+end;
+
+procedure TFRM_Cadastro.BT_NovoClick(Sender: TObject);
+begin
+  inherited;
+  AtivarBotoes(True);
+  if not Ds_Generico.DataSet.Active then
+    DS_Generico.DataSet.Open;
+    DS_Generico.DataSet.Append;
+
+end;
+
+
+procedure TFRM_Cadastro.BT_SairClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+procedure TFRM_Cadastro.BT_SalvarClick(Sender: TObject);
+begin
+  inherited;
+  AtivarBotoes(False)
+  DS_Generico.DataSet.Post;
+end;
+
+
+
+procedure TFRM_Cadastro.FormShow(Sender: TObject);
+begin
+  inherited;
+CBX_Consulta.Items.Clear;
+DS_Generico.DataSet.GetFieldNames(CBX_Consulta.Items);
+CBX_Consulta.ItemIndex := 0;
+AtivarBotoes(False);
+end;
+
+procedure TFRM_Cadastro.SBT_PesquisarClick(Sender: TObject);
+var i : integer;
+  palavra:string;
+  key:char;
+begin
+  inherited;
+  TipoDado:=1;  //numeric
+  palavra:=trim(EDT_Consulta.Text);
+
+  for i := 1 to length(palavra) do
+  begin
+    key:=palavras[i];
+    if not (key in ['0'..'9']) then then
+    begin
+       if key = '/' then
+         then TipoDado:=3  //data
+         else TipoDado:=2; //character
+    end;
+  end;
+
+end;
+
+end.

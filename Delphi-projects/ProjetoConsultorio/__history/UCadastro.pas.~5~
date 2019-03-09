@@ -1,0 +1,85 @@
+unit UCadastro;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UPadrao, DB, Buttons, Grids, DBGrids, StdCtrls, ComCtrls, ExtCtrls,
+  DBCtrls, ImgList, ToolWin;
+
+type
+  TFRM_Cadastro = class(TFRM_Padrao)
+    TB_Cadastro: TToolBar;
+    GBX_Cadastro: TGroupBox;
+    IMG_Cadastro: TImageList;
+    DBN_Cadastro: TDBNavigator;
+    ToolButton1: TToolButton;
+    BT_Novo: TToolButton;
+    BT_Salvar: TToolButton;
+    BT_Alterar: TToolButton;
+    BT_Cancelar: TToolButton;
+    BT_Excluir: TToolButton;
+    ToolButton7: TToolButton;
+    BT_Livre: TToolButton;
+    ToolButton9: TToolButton;
+    BT_Sair: TToolButton;
+    GBX_Consulta: TGroupBox;
+    EDT_Consulta: TEdit;
+    CBX_Consulta: TComboBox;
+    CBX_TipoConsulta: TComboBox;
+    DBG_Consulta: TDBGrid;
+    SBT_Pesquisar: TSpeedButton;
+    procedure FormShow(Sender: TObject);
+    procedure AtivarBotoes(AEdicao:Boolean);
+    procedure BT_NovoClick(Sender: TObject);
+    procedure BT_SalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Cadastro: TFRM_Cadastro;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRM_Cadastro.AtivarBotoes(AEdicao: Boolean);
+begin
+  DBN_Cadastro.Enabled := not AEdicao;
+  BT_Novo.Enabled := not AEdicao;
+  BT_Salvar.Enabled := AEdicao;
+  BT_Alterar.Enabled := not AEdicao;
+  BT_Cancelar.Enabled := AEdicao;
+  BT_Excluir.Enabled := not AEdicao;
+  BT_Sair.Enabled := not AEdicao;
+end;
+
+procedure TFRM_Cadastro.BT_NovoClick(Sender: TObject);
+begin
+  inherited;
+  AtivarBotoes(True);
+  if not DS_Generico.DataSet.Active then
+    DS_Generico.DataSet.Open;
+    DS_Generico.DataSet.Append;
+end;
+
+procedure TFRM_Cadastro.BT_SalvarClick(Sender: TObject);
+begin
+  inherited;
+  AtivarBotoes(False);
+  DS_Generico.DataSet.Post;
+end;
+
+procedure TFRM_Cadastro.FormShow(Sender: TObject);
+begin
+  inherited;
+  CBX_Consulta.Items.Clear;
+  DS_Generico.DataSet.GetFieldNames(CBX_Consulta.Items);
+  CBX_Consulta.ItemIndex := 0;
+  AtivarBotoes(False);
+end;
+
+end.

@@ -1,0 +1,24 @@
+unit PConsultorio;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFRM_Principal = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Principal: TFRM_Principal;
+
+implementation
+
+{$R *.dfm}
+
+end.

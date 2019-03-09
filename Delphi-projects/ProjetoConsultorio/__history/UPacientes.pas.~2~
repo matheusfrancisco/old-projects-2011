@@ -1,0 +1,31 @@
+unit UPacientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Pacientes = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Nome: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Pacientes: TFRM_Pacientes;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

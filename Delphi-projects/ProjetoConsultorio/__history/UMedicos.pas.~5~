@@ -1,0 +1,50 @@
+unit UMedicos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Medicos = class(TFRM_Cadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Nome: TDBEdit;
+    DBE_CRM: TDBEdit;
+    DBE_Dt_Cadastro: TDBEdit;
+    DBE_Dt_Alteração: TDBEdit;
+    PageControl1: TPageControl;
+    Tab_Dados: TTabSheet;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    DBE_CPF: TDBEdit;
+    DBE_RG: TDBEdit;
+    DBE_Dt_Nascimento: TDBEdit;
+    DBRadioGroup1: TDBRadioGroup;
+    DBComboBox1: TDBComboBox;
+    DBM_Observacao: TDBMemo;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Medicos: TFRM_Medicos;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/05/12 09:14:32.640.pas,C:\Documents and Settings\Administrador\Meus documentos\RAD Studio\Projects\Unit1.pas=P:\Delphi\ProjetoConsultorio\UPrincipal.pas</Transaction>
+    <Transaction>2012/05/12 09:14:32.640.dfm,C:\Documents and Settings\Administrador\Meus documentos\RAD Studio\Projects\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UPrincipal.dfm</Transaction>
+    <Transaction>2012/05/12 09:14:42.062.dproj,C:\Documents and Settings\Administrador\Meus documentos\RAD Studio\Projects\Project1.dproj=P:\Delphi\ProjetoConsultorio\PConsultorio.dproj</Transaction>
+    <Transaction>2012/05/19 08:20:04.812.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UPadrao.pas</Transaction>
+    <Transaction>2012/05/19 08:20:04.812.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UPadrao.dfm</Transaction>
+    <Transaction>2012/05/19 08:23:05.046.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UCadastro.pas</Transaction>
+    <Transaction>2012/05/19 08:23:05.046.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UCadastro.dfm</Transaction>
+    <Transaction>2012/05/19 09:04:00.140.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UDMPrincipal.pas</Transaction>
+    <Transaction>2012/05/19 09:04:00.140.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UDMPrincipal.dfm</Transaction>
+    <Transaction>2012/05/26 09:44:35.421.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UEstados.pas</Transaction>
+    <Transaction>2012/05/26 09:44:35.421.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UEstados.dfm</Transaction>
+    <Transaction>2012/06/16 09:26:17.796.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UCidades.pas</Transaction>
+    <Transaction>2012/06/16 09:26:17.796.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UCidades.dfm</Transaction>
+    <Transaction>2012/06/23 09:56:29.421.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UConvenios.pas</Transaction>
+    <Transaction>2012/06/23 09:56:29.421.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UConvenios.dfm</Transaction>
+    <Transaction>2012/06/30 09:25:52.187.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UEspecializacoes.pas</Transaction>
+    <Transaction>2012/06/30 09:25:52.187.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UEspecializacoes.dfm</Transaction>
+    <Transaction>2012/07/07 08:33:06.359.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UPacientes.pas</Transaction>
+    <Transaction>2012/07/07 08:33:06.359.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UPacientes.dfm</Transaction>
+    <Transaction>2012/07/21 09:27:34.968.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UConvenios_Pacientes.pas</Transaction>
+    <Transaction>2012/07/21 09:27:34.968.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UConvenios_Pacientes.dfm</Transaction>
+    <Transaction>2012/08/18 08:23:02.093.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UMedicos.pas</Transaction>
+    <Transaction>2012/08/18 08:23:02.093.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UMedicos.dfm</Transaction>
+    <Transaction>2012/08/18 09:48:35.187.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UEspecializacoes_Medicas.pas</Transaction>
+    <Transaction>2012/08/18 09:48:35.187.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UEspecializacoes_Medicas.dfm</Transaction>
+    <Transaction>2012/08/25 09:16:48.546.pas,P:\Delphi\ProjetoConsultorio\Unit1.pas=P:\Delphi\ProjetoConsultorio\UConsultas.pas</Transaction>
+    <Transaction>2012/08/25 09:16:48.546.dfm,P:\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Delphi\ProjetoConsultorio\UConsultas.dfm</Transaction>
+    <Transaction>2012/10/06 08:45:48.390.pas,P:\Matheus\Delphi\ProjetoConsultorio\Unit1.pas=P:\Matheus\Delphi\ProjetoConsultorio\URelMedicos.pas</Transaction>
+    <Transaction>2012/10/06 08:45:48.390.dfm,P:\Matheus\Delphi\ProjetoConsultorio\Unit1.dfm=P:\Matheus\Delphi\ProjetoConsultorio\URelMedicos.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

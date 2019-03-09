@@ -1,0 +1,807 @@
+object DM_Principal: TDM_Principal
+  OldCreateOrder = False
+  Height = 739
+  Width = 335
+  object SQL_ConexaoBD: TSQLConnection
+    ConnectionName = 'OracleConnection'
+    DriverName = 'Oracle'
+    GetDriverFunc = 'getSQLDriverORACLE'
+    LibraryName = 'dbxora.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Oracle'
+      'Database=127.0.0.1'
+      'User_Name=luciano'
+      'Password=microway'
+      'BlobSize=-1'
+      'Oracle TransIsolation=ReadCommited'
+      'OS Authentication=False'
+      'Multiple Transaction=False'
+      'Trim Char=False'
+      'Decimal Separator=.')
+    VendorLib = 'oci.dll'
+    AfterConnect = SQL_ConexaoBDAfterConnect
+    Connected = True
+    Left = 48
+    Top = 16
+  end
+  object SQL_Estados: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from estados e where e.codigo_estado = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 88
+    object SQL_EstadosCODIGO_ESTADO: TFMTBCDField
+      FieldName = 'CODIGO_ESTADO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_EstadosNOME_ESTADO: TWideStringField
+      FieldName = 'NOME_ESTADO'
+      Required = True
+      Size = 30
+    end
+    object SQL_EstadosSIGLA_ESTADO: TWideStringField
+      FieldName = 'SIGLA_ESTADO'
+      Required = True
+      Size = 2
+    end
+  end
+  object DSP_Estados: TDataSetProvider
+    DataSet = SQL_Estados
+    Left = 136
+    Top = 88
+  end
+  object CDS_Estados: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Estados'
+    AfterPost = CDS_EstadosAfterPost
+    AfterDelete = CDS_EstadosAfterDelete
+    Left = 232
+    Top = 88
+    object CDS_EstadosCODIGO_ESTADO: TFMTBCDField
+      FieldName = 'CODIGO_ESTADO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_EstadosNOME_ESTADO: TWideStringField
+      FieldName = 'NOME_ESTADO'
+      Required = True
+      Size = 30
+    end
+    object CDS_EstadosSIGLA_ESTADO: TWideStringField
+      FieldName = 'SIGLA_ESTADO'
+      Required = True
+      Size = 2
+    end
+  end
+  object SQL_Cidades: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from cidades c where c.codigo_cidade = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 160
+    object SQL_CidadesCODIGO_CIDADE: TFMTBCDField
+      FieldName = 'CODIGO_CIDADE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_CidadesESTADO_CIDADE: TFMTBCDField
+      FieldName = 'ESTADO_CIDADE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_CidadesNOME_CIDADE: TWideStringField
+      FieldName = 'NOME_CIDADE'
+      Required = True
+      Size = 45
+    end
+  end
+  object DSP_Cidades: TDataSetProvider
+    DataSet = SQL_Cidades
+    Left = 136
+    Top = 160
+  end
+  object CDS_Cidades: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Cidades'
+    AfterPost = CDS_CidadesAfterPost
+    AfterDelete = CDS_CidadesAfterDelete
+    Left = 232
+    Top = 160
+    object CDS_CidadesCODIGO_CIDADE: TFMTBCDField
+      FieldName = 'CODIGO_CIDADE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_CidadesESTADO_CIDADE: TFMTBCDField
+      FieldName = 'ESTADO_CIDADE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_CidadesNOME_CIDADE: TWideStringField
+      FieldName = 'NOME_CIDADE'
+      Required = True
+      Size = 45
+    end
+  end
+  object DSP_Convenios: TDataSetProvider
+    DataSet = SQL_Convenios
+    Left = 136
+    Top = 232
+  end
+  object CDS_Convenios: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Convenios'
+    AfterPost = CDS_ConveniosAfterPost
+    AfterDelete = CDS_ConveniosAfterDelete
+    Left = 232
+    Top = 232
+    object CDS_ConveniosCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_ConveniosNOME_CONVENIO: TWideStringField
+      FieldName = 'NOME_CONVENIO'
+      Required = True
+      Size = 60
+    end
+    object CDS_ConveniosDESCRICAO_CONVENIO: TWideStringField
+      FieldName = 'DESCRICAO_CONVENIO'
+      Size = 200
+    end
+  end
+  object SQL_Convenios: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from convenios c where c.codigo_convenio = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 232
+    object SQL_ConveniosCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_ConveniosNOME_CONVENIO: TWideStringField
+      FieldName = 'NOME_CONVENIO'
+      Required = True
+      Size = 60
+    end
+    object SQL_ConveniosDESCRICAO_CONVENIO: TWideStringField
+      FieldName = 'DESCRICAO_CONVENIO'
+      Size = 200
+    end
+  end
+  object SQL_Especializacoes: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      
+        'select * from especializacoes e where e.codigo_especializacao = ' +
+        '-1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 304
+    object SQL_EspecializacoesCODIGO_ESPECIALIZACAO: TFMTBCDField
+      FieldName = 'CODIGO_ESPECIALIZACAO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_EspecializacoesNOME_ESPECIALIZACAO: TWideStringField
+      FieldName = 'NOME_ESPECIALIZACAO'
+      Required = True
+      Size = 60
+    end
+    object SQL_EspecializacoesDESCRICAO_ESPECIALIZACAO: TWideStringField
+      FieldName = 'DESCRICAO_ESPECIALIZACAO'
+      Size = 200
+    end
+  end
+  object CDS_Especializacoes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Especializacoes'
+    AfterPost = CDS_EspecializacoesAfterPost
+    AfterDelete = CDS_EspecializacoesAfterDelete
+    Left = 232
+    Top = 304
+    object CDS_EspecializacoesCODIGO_ESPECIALIZACAO: TFMTBCDField
+      FieldName = 'CODIGO_ESPECIALIZACAO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_EspecializacoesNOME_ESPECIALIZACAO: TWideStringField
+      FieldName = 'NOME_ESPECIALIZACAO'
+      Required = True
+      Size = 60
+    end
+    object CDS_EspecializacoesDESCRICAO_ESPECIALIZACAO: TWideStringField
+      FieldName = 'DESCRICAO_ESPECIALIZACAO'
+      Size = 200
+    end
+  end
+  object DSP_Especializacoes: TDataSetProvider
+    DataSet = SQL_Especializacoes
+    Left = 136
+    Top = 303
+  end
+  object SQL_Medicos: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from medicos m where m.codigo_medico = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 444
+    object SQL_MedicosCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_MedicosCPF_MEDICO: TWideStringField
+      FieldName = 'CPF_MEDICO'
+      Required = True
+      Size = 14
+    end
+    object SQL_MedicosRG_MEDICO: TWideStringField
+      FieldName = 'RG_MEDICO'
+      Required = True
+      Size = 11
+    end
+    object SQL_MedicosCRM_MEDICO: TWideStringField
+      FieldName = 'CRM_MEDICO'
+      Required = True
+      Size = 6
+    end
+    object SQL_MedicosNOME_MEDICO: TWideStringField
+      FieldName = 'NOME_MEDICO'
+      Required = True
+      Size = 50
+    end
+    object SQL_MedicosENDERECO_MEDICO: TWideStringField
+      FieldName = 'ENDERECO_MEDICO'
+      Required = True
+      Size = 60
+    end
+    object SQL_MedicosBAIRRO_MEDICO: TWideStringField
+      FieldName = 'BAIRRO_MEDICO'
+      Required = True
+      Size = 40
+    end
+    object SQL_MedicosCIDADE_MEDICO: TFMTBCDField
+      FieldName = 'CIDADE_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_MedicosCEP_MEDICO: TWideStringField
+      FieldName = 'CEP_MEDICO'
+      Size = 9
+    end
+    object SQL_MedicosTELEFONE_MEDICO: TWideStringField
+      FieldName = 'TELEFONE_MEDICO'
+      Size = 14
+    end
+    object SQL_MedicosCELULAR_MEDICO: TWideStringField
+      FieldName = 'CELULAR_MEDICO'
+      Size = 14
+    end
+    object SQL_MedicosEMAIL_MEDICO: TWideStringField
+      FieldName = 'EMAIL_MEDICO'
+      Size = 60
+    end
+    object SQL_MedicosOBSERVACOES_MEDICO: TWideStringField
+      FieldName = 'OBSERVACOES_MEDICO'
+      Size = 200
+    end
+    object SQL_MedicosDT_CADASTRO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_CADASTRO_MEDICO'
+      Required = True
+    end
+    object SQL_MedicosDT_ALTERACAO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_ALTERACAO_MEDICO'
+      Required = True
+    end
+    object SQL_MedicosDT_NASCIMENTO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_NASCIMENTO_MEDICO'
+      Required = True
+    end
+    object SQL_MedicosSEXO_MEDICO: TWideStringField
+      FieldName = 'SEXO_MEDICO'
+      Required = True
+      Size = 1
+    end
+    object SQL_MedicosESTADO_CIVIL_MEDICO: TWideStringField
+      FieldName = 'ESTADO_CIVIL_MEDICO'
+      Required = True
+      Size = 15
+    end
+  end
+  object CDS_Medicos: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Medicos'
+    AfterPost = CDS_MedicosAfterPost
+    AfterDelete = CDS_MedicosAfterDelete
+    Left = 232
+    Top = 448
+    object CDS_MedicosCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_MedicosCPF_MEDICO: TWideStringField
+      FieldName = 'CPF_MEDICO'
+      Required = True
+      Size = 14
+    end
+    object CDS_MedicosRG_MEDICO: TWideStringField
+      FieldName = 'RG_MEDICO'
+      Required = True
+      Size = 11
+    end
+    object CDS_MedicosCRM_MEDICO: TWideStringField
+      FieldName = 'CRM_MEDICO'
+      Required = True
+      Size = 6
+    end
+    object CDS_MedicosNOME_MEDICO: TWideStringField
+      FieldName = 'NOME_MEDICO'
+      Required = True
+      Size = 50
+    end
+    object CDS_MedicosENDERECO_MEDICO: TWideStringField
+      FieldName = 'ENDERECO_MEDICO'
+      Required = True
+      Size = 60
+    end
+    object CDS_MedicosBAIRRO_MEDICO: TWideStringField
+      FieldName = 'BAIRRO_MEDICO'
+      Required = True
+      Size = 40
+    end
+    object CDS_MedicosCIDADE_MEDICO: TFMTBCDField
+      FieldName = 'CIDADE_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_MedicosCEP_MEDICO: TWideStringField
+      FieldName = 'CEP_MEDICO'
+      Size = 9
+    end
+    object CDS_MedicosTELEFONE_MEDICO: TWideStringField
+      FieldName = 'TELEFONE_MEDICO'
+      Size = 14
+    end
+    object CDS_MedicosCELULAR_MEDICO: TWideStringField
+      FieldName = 'CELULAR_MEDICO'
+      Size = 14
+    end
+    object CDS_MedicosEMAIL_MEDICO: TWideStringField
+      FieldName = 'EMAIL_MEDICO'
+      Size = 60
+    end
+    object CDS_MedicosOBSERVACOES_MEDICO: TWideStringField
+      FieldName = 'OBSERVACOES_MEDICO'
+      Size = 200
+    end
+    object CDS_MedicosDT_CADASTRO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_CADASTRO_MEDICO'
+      Required = True
+    end
+    object CDS_MedicosDT_ALTERACAO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_ALTERACAO_MEDICO'
+      Required = True
+    end
+    object CDS_MedicosDT_NASCIMENTO_MEDICO: TSQLTimeStampField
+      FieldName = 'DT_NASCIMENTO_MEDICO'
+      Required = True
+    end
+    object CDS_MedicosSEXO_MEDICO: TWideStringField
+      FieldName = 'SEXO_MEDICO'
+      Required = True
+      Size = 1
+    end
+    object CDS_MedicosESTADO_CIVIL_MEDICO: TWideStringField
+      FieldName = 'ESTADO_CIVIL_MEDICO'
+      Required = True
+      Size = 15
+    end
+  end
+  object DSP_Medicos: TDataSetProvider
+    DataSet = SQL_Medicos
+    Left = 132
+    Top = 448
+  end
+  object SQL_Convenios_Pacientes: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from convenios_pacientes p where p.codigo_convenio = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 520
+    object SQL_Convenios_PacientesCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_Convenios_PacientesCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+  end
+  object SQL_Especializacoes_Medicas: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      
+        'select * from especializacoes_medicos e where e.codigo_especiali' +
+        'zacao = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 592
+    object SQL_Especializacoes_MedicasCODIGO_ESPECIALIZACAO: TFMTBCDField
+      FieldName = 'CODIGO_ESPECIALIZACAO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_Especializacoes_MedicasCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+  end
+  object DSP_Convenios_Pacientes: TDataSetProvider
+    DataSet = SQL_Convenios_Pacientes
+    Left = 136
+    Top = 520
+  end
+  object DSP_Especializacoes_Medicas: TDataSetProvider
+    DataSet = SQL_Especializacoes_Medicas
+    Left = 136
+    Top = 592
+  end
+  object CDS_Convenios_Pacientes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Convenios_Pacientes'
+    AfterPost = CDS_Convenios_PacientesAfterPost
+    AfterDelete = CDS_Convenios_PacientesAfterDelete
+    Left = 232
+    Top = 520
+    object CDS_Convenios_PacientesCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_Convenios_PacientesCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+  end
+  object CDS_Especializacoes_Medicas: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Especializacoes_Medicas'
+    Left = 232
+    Top = 592
+    object CDS_Especializacoes_MedicasCODIGO_ESPECIALIZACAO: TFMTBCDField
+      FieldName = 'CODIGO_ESPECIALIZACAO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_Especializacoes_MedicasCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+  end
+  object CDS_Consultas: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Consultas'
+    Left = 232
+    Top = 664
+    object CDS_ConsultasCODIGO_CONSULTA: TFMTBCDField
+      FieldName = 'CODIGO_CONSULTA'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_ConsultasCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_ConsultasCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_ConsultasCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Precision = 32
+      Size = 0
+    end
+    object CDS_ConsultasDATA_CONSULTA: TSQLTimeStampField
+      FieldName = 'DATA_CONSULTA'
+      Required = True
+    end
+  end
+  object DSP_Consultas: TDataSetProvider
+    DataSet = SQL_Consultas
+    Left = 136
+    Top = 664
+  end
+  object SQL_Consultas: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from consultas c where c.codigo_consulta = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 664
+    object SQL_ConsultasCODIGO_CONSULTA: TFMTBCDField
+      FieldName = 'CODIGO_CONSULTA'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_ConsultasCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_ConsultasCODIGO_MEDICO: TFMTBCDField
+      FieldName = 'CODIGO_MEDICO'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_ConsultasCODIGO_CONVENIO: TFMTBCDField
+      FieldName = 'CODIGO_CONVENIO'
+      Precision = 32
+      Size = 0
+    end
+    object SQL_ConsultasDATA_CONSULTA: TSQLTimeStampField
+      FieldName = 'DATA_CONSULTA'
+      Required = True
+    end
+  end
+  object SQL_Pacientes: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from pacientes p where p.codigo_paciente = -1')
+    SQLConnection = SQL_ConexaoBD
+    Left = 48
+    Top = 376
+    object SQL_PacientesCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_PacientesCPF_PACIENTE: TWideStringField
+      FieldName = 'CPF_PACIENTE'
+      Required = True
+      Size = 14
+    end
+    object SQL_PacientesRG_PACIENTE: TWideStringField
+      FieldName = 'RG_PACIENTE'
+      Required = True
+      Size = 11
+    end
+    object SQL_PacientesNOME_PACIENTE: TWideStringField
+      FieldName = 'NOME_PACIENTE'
+      Required = True
+      Size = 50
+    end
+    object SQL_PacientesENDERECO_PACIENTE: TWideStringField
+      FieldName = 'ENDERECO_PACIENTE'
+      Required = True
+      Size = 60
+    end
+    object SQL_PacientesBAIRRO_PACIENTE: TWideStringField
+      FieldName = 'BAIRRO_PACIENTE'
+      Required = True
+      Size = 40
+    end
+    object SQL_PacientesCIDADE_PACIENTE: TFMTBCDField
+      FieldName = 'CIDADE_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object SQL_PacientesCEP_PACIENTE: TWideStringField
+      FieldName = 'CEP_PACIENTE'
+      Size = 9
+    end
+    object SQL_PacientesTELEFONE_PACIENTE: TWideStringField
+      FieldName = 'TELEFONE_PACIENTE'
+      Size = 14
+    end
+    object SQL_PacientesCELULAR_PACIENTE: TWideStringField
+      FieldName = 'CELULAR_PACIENTE'
+      Size = 14
+    end
+    object SQL_PacientesEMAIL_PACIENTE: TWideStringField
+      FieldName = 'EMAIL_PACIENTE'
+      Size = 60
+    end
+    object SQL_PacientesOBSERVACOES_PACIENTE: TWideStringField
+      FieldName = 'OBSERVACOES_PACIENTE'
+      Size = 200
+    end
+    object SQL_PacientesDT_CADASTRO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_CADASTRO_PACIENTE'
+      Required = True
+    end
+    object SQL_PacientesDT_ALTERACAO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_ALTERACAO_PACIENTE'
+      Required = True
+    end
+    object SQL_PacientesDT_NASCIMENTO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_NASCIMENTO_PACIENTE'
+      Required = True
+    end
+    object SQL_PacientesSEXO_PACIENTE: TWideStringField
+      FieldName = 'SEXO_PACIENTE'
+      Required = True
+      Size = 1
+    end
+    object SQL_PacientesESTADO_CIVIL_PACIENTE: TWideStringField
+      FieldName = 'ESTADO_CIVIL_PACIENTE'
+      Required = True
+      Size = 15
+    end
+    object SQL_PacientesPROFISSAO_PACIENTE: TWideStringField
+      FieldName = 'PROFISSAO_PACIENTE'
+      Required = True
+      Size = 40
+    end
+    object SQL_PacientesPRONTUARIO_PACIENTE: TWideStringField
+      FieldName = 'PRONTUARIO_PACIENTE'
+      Size = 2000
+    end
+  end
+  object DSP_Pacientes: TDataSetProvider
+    DataSet = SQL_Pacientes
+    Left = 136
+    Top = 376
+  end
+  object CDS_Pacientes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Pacientes'
+    AfterPost = CDS_PacientesAfterPost
+    AfterDelete = CDS_PacientesAfterDelete
+    Left = 232
+    Top = 376
+    object CDS_PacientesCODIGO_PACIENTE: TFMTBCDField
+      FieldName = 'CODIGO_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_PacientesCPF_PACIENTE: TWideStringField
+      FieldName = 'CPF_PACIENTE'
+      Required = True
+      Size = 14
+    end
+    object CDS_PacientesRG_PACIENTE: TWideStringField
+      FieldName = 'RG_PACIENTE'
+      Required = True
+      Size = 11
+    end
+    object CDS_PacientesNOME_PACIENTE: TWideStringField
+      FieldName = 'NOME_PACIENTE'
+      Required = True
+      Size = 50
+    end
+    object CDS_PacientesENDERECO_PACIENTE: TWideStringField
+      FieldName = 'ENDERECO_PACIENTE'
+      Required = True
+      Size = 60
+    end
+    object CDS_PacientesBAIRRO_PACIENTE: TWideStringField
+      FieldName = 'BAIRRO_PACIENTE'
+      Required = True
+      Size = 40
+    end
+    object CDS_PacientesCIDADE_PACIENTE: TFMTBCDField
+      FieldName = 'CIDADE_PACIENTE'
+      Required = True
+      Precision = 32
+      Size = 0
+    end
+    object CDS_PacientesCEP_PACIENTE: TWideStringField
+      FieldName = 'CEP_PACIENTE'
+      Size = 9
+    end
+    object CDS_PacientesTELEFONE_PACIENTE: TWideStringField
+      FieldName = 'TELEFONE_PACIENTE'
+      Size = 14
+    end
+    object CDS_PacientesCELULAR_PACIENTE: TWideStringField
+      FieldName = 'CELULAR_PACIENTE'
+      Size = 14
+    end
+    object CDS_PacientesEMAIL_PACIENTE: TWideStringField
+      FieldName = 'EMAIL_PACIENTE'
+      Size = 60
+    end
+    object CDS_PacientesOBSERVACOES_PACIENTE: TWideStringField
+      FieldName = 'OBSERVACOES_PACIENTE'
+      Size = 200
+    end
+    object CDS_PacientesDT_CADASTRO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_CADASTRO_PACIENTE'
+      Required = True
+    end
+    object CDS_PacientesDT_ALTERACAO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_ALTERACAO_PACIENTE'
+      Required = True
+    end
+    object CDS_PacientesDT_NASCIMENTO_PACIENTE: TSQLTimeStampField
+      FieldName = 'DT_NASCIMENTO_PACIENTE'
+      Required = True
+    end
+    object CDS_PacientesSEXO_PACIENTE: TWideStringField
+      FieldName = 'SEXO_PACIENTE'
+      Required = True
+      Size = 1
+    end
+    object CDS_PacientesESTADO_CIVIL_PACIENTE: TWideStringField
+      FieldName = 'ESTADO_CIVIL_PACIENTE'
+      Required = True
+      Size = 15
+    end
+    object CDS_PacientesPROFISSAO_PACIENTE: TWideStringField
+      FieldName = 'PROFISSAO_PACIENTE'
+      Required = True
+      Size = 40
+    end
+    object CDS_PacientesPRONTUARIO_PACIENTE: TWideStringField
+      FieldName = 'PRONTUARIO_PACIENTE'
+      Size = 2000
+    end
+  end
+end

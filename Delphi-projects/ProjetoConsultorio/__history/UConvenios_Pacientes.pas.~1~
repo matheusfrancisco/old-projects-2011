@@ -1,0 +1,25 @@
+unit UConvenios_Pacientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin;
+
+type
+  TFRM_Convenios_Pacientes = class(TFRM_Cadastro)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Convenios_Pacientes: TFRM_Convenios_Pacientes;
+
+implementation
+
+{$R *.dfm}
+
+end.

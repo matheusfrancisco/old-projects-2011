@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/02/11 08:38:46.125.pas,C:\Documents and Settings\AlunoA\Meus documentos\RAD Studio\Projects\Unit2.pas=P:\Matheus\Delphi\Aplicação2\USpeedCalc.pas</Transaction>
+    <Transaction>2012/02/11 08:38:46.125.dfm,C:\Documents and Settings\AlunoA\Meus documentos\RAD Studio\Projects\Unit2.dfm=P:\Matheus\Delphi\Aplicação2\USpeedCalc.dfm</Transaction>
+    <Transaction>2012/02/11 08:40:19.171.dproj,C:\Documents and Settings\AlunoA\Meus documentos\RAD Studio\Projects\Project2.dproj=P:\Matheus\Delphi\Aplicação2\PSpeedCalc.dproj</Transaction>
+    <Transaction>2012/03/03 08:04:48.782.pas,P:\Matheus\Delphi\Aplicação2\Unit1.pas=P:\Matheus\Delphi\Aplicação2\UResultado.pas</Transaction>
+    <Transaction>2012/03/03 08:04:48.782.dfm,P:\Matheus\Delphi\Aplicação2\Unit1.dfm=P:\Matheus\Delphi\Aplicação2\UResultado.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

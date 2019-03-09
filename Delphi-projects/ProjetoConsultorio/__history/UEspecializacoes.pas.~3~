@@ -1,0 +1,41 @@
+unit UEspecializacoes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Especializacoes = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    LBL_Descricao: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Nome: TDBEdit;
+    DBM_Descricao: TDBMemo;
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Especializacoes: TFRM_Especializacoes;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+procedure TFRM_Especializacoes.FormActivate(Sender: TObject);
+begin
+  inherited;
+  DM_Principal.CarregarTodos(DM_Principal.SQL_Especializacoes, DM_Principal.CDS_Especializacoes, 'ESPECIALIZACOES', 'NOME_ESPECIALIZACAO');
+  EDT_Consulta.Clear;
+end;
+
+end.

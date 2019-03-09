@@ -1,0 +1,146 @@
+object FRM_Principal: TFRM_Principal
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsSingle
+  Caption = ':: MW - Clinica : Gest'#227'o de Consult'#243'rios ::'
+  ClientHeight = 567
+  ClientWidth = 778
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 368
+    Top = 192
+    Width = 105
+    Height = 105
+  end
+  object TB_Principal: TToolBar
+    Left = 8
+    Top = 8
+    Width = 762
+    Height = 87
+    Align = alNone
+    BorderWidth = 3
+    ButtonHeight = 21
+    ButtonWidth = 80
+    Caption = 'TB_Principal'
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    ShowCaptions = True
+    TabOrder = 0
+    object TBT_Pacientes: TToolButton
+      Left = 0
+      Top = 0
+      Caption = 'Pacientes'
+      ImageIndex = 0
+    end
+    object TBT_Medicos: TToolButton
+      Left = 80
+      Top = 0
+      Caption = 'TBT_Medicos'
+      ImageIndex = 1
+    end
+    object ToolButton3: TToolButton
+      Left = 160
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton3'
+      ImageIndex = 2
+      Style = tbsSeparator
+    end
+    object TBT_Convenios: TToolButton
+      Left = 168
+      Top = 0
+      Caption = 'Conv'#234'nios'
+      ImageIndex = 2
+    end
+    object TBT_Especializacoes: TToolButton
+      Left = 248
+      Top = 0
+      Caption = 'Especializa'#231#245'es'
+      ImageIndex = 3
+    end
+    object ToolButton6: TToolButton
+      Left = 328
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton6'
+      ImageIndex = 4
+      Style = tbsSeparator
+    end
+    object TBT_Consultas: TToolButton
+      Left = 336
+      Top = 0
+      Caption = 'Consultas'
+      ImageIndex = 4
+    end
+    object ToolButton8: TToolButton
+      Left = 416
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton8'
+      ImageIndex = 5
+      Style = tbsSeparator
+    end
+    object TBT_Sair: TToolButton
+      Left = 424
+      Top = 0
+      Caption = 'Sair'
+      ImageIndex = 5
+    end
+    object ActionToolBar1: TActionToolBar
+      Left = 504
+      Top = 0
+      Width = 150
+      Height = 21
+      Caption = 'ActionToolBar1'
+      ColorMap.HighlightColor = 15660791
+      ColorMap.BtnSelectedColor = clBtnFace
+      ColorMap.UnusedColor = 15660791
+      Spacing = 0
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 280
+    Top = 320
+    object C1: TMenuItem
+      Caption = 'Cadastros'
+      object Pacientes1: TMenuItem
+        Caption = 'Pacientes'
+      end
+      object Mdicos1: TMenuItem
+        Caption = 'M'#233'dicos'
+      end
+      object Convnios1: TMenuItem
+        Caption = 'Conv'#234'nios'
+      end
+      object Especializaes1: TMenuItem
+        Caption = 'Especializa'#231#245'es'
+      end
+      object Cidades1: TMenuItem
+        Caption = 'Cidades'
+      end
+      object Estados1: TMenuItem
+        Caption = 'Estados'
+      end
+    end
+    object Movimentaes1: TMenuItem
+      Caption = 'Movimenta'#231#245'es'
+      object Consultas1: TMenuItem
+        Caption = 'Consultas'
+      end
+    end
+  end
+  object ImageList1: TImageList
+    Left = 592
+    Top = 416
+  end
+end
