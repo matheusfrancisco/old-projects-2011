@@ -1,0 +1,75 @@
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 8.15.11.8593]
+    Renderer: NVIDIA GeForce 7300 SE/7200 GS (Microsoft Corporation - WDDM)
+    Vendor:   NVIDIA
+    VRAM:     249 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=0 NativeShadow=1 DF16=0 DF24=0 INTZ=0 RAWZ=1 NULL=1 RESZ=0 SlowINTZ=0
+desktop: 1920x1080 60Hz; virtual: 2944x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Initialize engine version: 3.5.3f3
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\alunoA\Desktop\Projeto2D\Projeto2d_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\alunoA\Desktop\Projeto2D\Projeto2d_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\alunoA\Desktop\Projeto2D\Projeto2d_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\alunoA\Desktop\Projeto2D\Projeto2d_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.074 seconds
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 183. Operation took 3.514177 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 183. Operation took 3.253322 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 183. Operation took 3.415649 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 183. Operation took 3.274085 ms.
+Platform assembly: C:\Users\alunoA\Desktop\Projeto2D\Projeto2d_Data\Managed\Boo.Lang.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 122. Operation took 13.347758 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 120. Operation took 11.570851 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.381673 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.569670 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.366573 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.457552 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.769747 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.323538 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 121. Operation took 12.563684 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 120. Operation took 12.568214 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.643283 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.497189 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.416404 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 185. Operation took 3.607798 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 121. Operation took 13.755084 ms.
