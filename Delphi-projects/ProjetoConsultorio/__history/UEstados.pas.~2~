@@ -1,0 +1,33 @@
+unit UEstados;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Estados = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    LBL_Sigla: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Nome: TDBEdit;
+    DBE_Sigla: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Estados: TFRM_Estados;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

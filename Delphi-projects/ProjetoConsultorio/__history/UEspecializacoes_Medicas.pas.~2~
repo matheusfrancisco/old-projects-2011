@@ -1,0 +1,33 @@
+unit UEspecializacoes_Medicas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin;
+
+type
+  TFRM_Especializacoes_Medicas = class(TFRM_Cadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    DBL_Medico: TDBLookupComboBox;
+    DBL_Especializacoes: TDBLookupComboBox;
+    DS_Medicos: TDataSource;
+    DS_Especializacoes: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Especializacoes_Medicas: TFRM_Especializacoes_Medicas;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

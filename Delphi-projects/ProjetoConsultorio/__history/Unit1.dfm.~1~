@@ -1,0 +1,10 @@
+inherited FRM_Consultas: TFRM_Consultas
+  Caption = 'Consultas'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited TB_Cadastro: TToolBar
+    inherited DBN_Cadastro: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

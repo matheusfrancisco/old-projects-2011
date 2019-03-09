@@ -1,0 +1,92 @@
+unit URelConsultas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UPadrao, DB, StdCtrls, Buttons, ComCtrls, DBCtrls, ExtCtrls;
+
+type
+  TFRM_RelConsultas = class(TFRM_Padrao)
+    RG_Selecao: TRadioGroup;
+    GB_Individual: TGroupBox;
+    GB_Periodo: TGroupBox;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    DTP_Inicial: TDateTimePicker;
+    DTP_Final: TDateTimePicker;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure RG_SelecaoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_RelConsultas: TFRM_RelConsultas;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+procedure TFRM_RelConsultas.RG_SelecaoClick(Sender: TObject);
+begin
+  inherited;
+  case RG_Selecao.ItemIndex of
+    0:begin
+      GB_Individual.Caption:='Geral';
+    end;
+
+    1:begin
+      DBLookupComboBox1.ListSource:=nil;
+      DBLookupComboBox1.ListField:='NOME_MEDICO';
+      DBLookupComboBox1.KeyField:='CODIGO_MEDICO';
+      GB_Individual.Caption:='Médico';
+      DS_Generico.DataSet:=DM_Principal.CDS_Medicos;
+      DBLookupComboBox1.ListSource:=DS_Generico;
+      DBLookupComboBox1.ListField:='NOME_MEDICO';
+      DBLookupComboBox1.KeyField:='CODIGO_MEDICO';
+      DM_Principal.CarregarTodos(DM_Principal.SQL_Medicos,DM_Principal.CDS_Medicos,
+        'MEDICOS', 'NOME_MEDICO');
+    end;
+
+
+
+    2:begin
+      DBLookupComboBox1.ListSource:=nil;
+      DBLookupComboBox1.ListField:='NOME_PACIENTE';
+      DBLookupComboBox1.KeyField:='CODIGO_PACIENTE';
+      GB_Individual.Caption:='Paciente';
+      DS_Generico.DataSet:=DM_Principal.CDS_Pacientes;
+      DBLookupComboBox1.ListSource:=DS_Generico;
+      DBLookupComboBox1.ListField:='NOME_PACIENTE';
+      DBLookupComboBox1.KeyField:='CODIGO_PACIENTE';
+      DM_Principal.CarregarTodos(DM_Principal.SQL_Pacientes,DM_Principal.CDS_Pacientes,
+        'PACIENTES', 'NOME_PACIENTE');
+    end;
+
+
+
+    3:begin
+      DBLookupComboBox1.ListSource:=nil;
+      DBLookupComboBox1.ListField:='NOME_CONVENIO';
+      DBLookupComboBox1.KeyField:='CODIGO_CONVENIO';
+      GB_Individual.Caption:='Convênio';
+      DS_Generico.DataSet:=DM_Principal.CDS_Convenios;
+      DBLookupComboBox1.ListSource:=DS_Generico;
+      DBLookupComboBox1.ListField:='NOME_CONVENIO';
+      DBLookupComboBox1.KeyField:='CODIGO_CONVENIO';
+      DM_Principal.CarregarTodos(DM_Principal.SQL_Convenios,DM_Principal.CDS_Convenios,
+        'CONVENIOS', 'NOME_CONVENIO');
+    end;
+  end;
+
+  GB_Individual.Enabled:=RG_Selecao.ItemIndex<>0;
+end;
+
+end.

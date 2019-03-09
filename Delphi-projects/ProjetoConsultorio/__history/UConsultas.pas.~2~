@@ -1,0 +1,25 @@
+unit UConsultas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin;
+
+type
+  TFRM_Consulta = class(TFRM_Cadastro)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Consulta: TFRM_Consulta;
+
+implementation
+
+{$R *.dfm}
+
+end.

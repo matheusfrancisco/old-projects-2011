@@ -1,0 +1,35 @@
+unit USpeedCalc;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, GIFImg, ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    LBL_Nome: TLabel;
+    LBL_Questao: TLabel;
+    LBL_Resultado: TLabel;
+    LBL_Resposta: TLabel;
+    LBL_Valor1: TLabel;
+    LBL_Valor2: TLabel;
+    LBL_Operador: TLabel;
+    LBL_VR_Resposta: TLabel;
+    Image1: TImage;
+    BTN_iniciar: TSpeedButton;
+    EDT_Resultado: TEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+end.

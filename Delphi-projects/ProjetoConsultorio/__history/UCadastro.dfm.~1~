@@ -1,0 +1,5 @@
+inherited FRM_Padrao1: TFRM_Padrao1
+  Caption = 'FRM_Padrao1'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

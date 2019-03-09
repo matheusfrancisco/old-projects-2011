@@ -1,0 +1,61 @@
+unit USpeedCalc;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, GIFImg, ExtCtrls;
+
+type
+  TFRM_Principal = class(TForm)
+    LBL_Nome: TLabel;
+    LBL_Questao: TLabel;
+    LBL_Resultado: TLabel;
+    LBL_Resposta: TLabel;
+    LBL_Valor1: TLabel;
+    LBL_Valor2: TLabel;
+    LBL_Operador: TLabel;
+    LBL_VR_Resposta: TLabel;
+    IMG_Semaforo: TImage;
+    BTN_iniciar: TSpeedButton;
+    EDT_Resultado: TEdit;
+    IMG_verde: TImage;
+    IMG_Amarelo: TImage;
+    IMG_Vermelho: TImage;
+    procedure FormCreate(Sender: TObject);
+    procedure BTN_iniciarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Operadores : array[0..3] of Char =('+','-','*','/');
+  Valor1, Valor2, OP : Integer;
+  FRM_Principal: TFRM_Principal;
+
+implementation
+
+{$R *.dfm}
+function Operador(OP : Integer): Char;
+begin
+
+end;
+
+procedure TFRM_Principal.BTN_iniciarClick(Sender: TObject);
+begin
+  Valor1 := Random(100);
+  Valor2 := Random(100);
+  LBL_Valor1.Caption := IntToStr(Valor1);
+  end;
+
+procedure TFRM_Principal.FormCreate(Sender: TObject);
+begin
+  IMG_Semaforo.Visible := True;
+  IMG_Verde.Visible := False;
+  IMG_Amarelo.Visible := False;
+  IMG_Vermelho.Visible := False;
+end;
+
+end.

@@ -1,0 +1,451 @@
+inherited FRM_Pacientes: TFRM_Pacientes
+  Caption = 'Pacientes'
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited TB_Cadastro: TToolBar
+    inherited DBN_Cadastro: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited GBX_Cadastro: TGroupBox
+    object LBL_Codigo: TLabel
+      Left = 15
+      Top = 32
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object LBL_Nome: TLabel
+      Left = 180
+      Top = 32
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+    end
+    object DBE_Codigo: TDBEdit
+      Left = 56
+      Top = 29
+      Width = 89
+      Height = 21
+      DataField = 'CODIGO_PACIENTE'
+      DataSource = DS_Generico
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object DBE_Nome: TDBEdit
+      Left = 215
+      Top = 29
+      Width = 315
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'NOME_PACIENTE'
+      DataSource = DS_Generico
+      TabOrder = 1
+    end
+    object PageControl1: TPageControl
+      Left = 15
+      Top = 56
+      Width = 514
+      Height = 229
+      ActivePage = Tab_Convenios
+      TabOrder = 2
+      object Tab_Dados: TTabSheet
+        Caption = 'Dados Pessoais'
+        object Label1: TLabel
+          Left = 5
+          Top = 10
+          Width = 19
+          Height = 13
+          Caption = 'CPF'
+        end
+        object Label2: TLabel
+          Left = 345
+          Top = 10
+          Width = 14
+          Height = 13
+          Caption = 'RG'
+        end
+        object Label3: TLabel
+          Left = 264
+          Top = 48
+          Width = 96
+          Height = 13
+          Caption = 'Data de Nascimento'
+        end
+        object Label4: TLabel
+          Left = 5
+          Top = 78
+          Width = 55
+          Height = 13
+          Caption = 'Estado Civil'
+        end
+        object Label5: TLabel
+          Left = 5
+          Top = 120
+          Width = 44
+          Height = 13
+          Caption = 'Profiss'#227'o'
+        end
+        object Label6: TLabel
+          Left = 5
+          Top = 147
+          Width = 58
+          Height = 13
+          Caption = 'Observa'#231#227'o'
+          Transparent = True
+        end
+        object DBE_CPF: TDBEdit
+          Left = 30
+          Top = 7
+          Width = 121
+          Height = 21
+          DataField = 'CPF_Paciente'
+          DataSource = DS_Generico
+          TabOrder = 0
+        end
+        object DBRG_Sexo: TDBRadioGroup
+          Left = 5
+          Top = 33
+          Width = 185
+          Height = 33
+          Caption = 'Sexo'
+          Columns = 2
+          DataField = 'SEXO_PACIENTE'
+          DataSource = DS_Generico
+          Items.Strings = (
+            'Masculino'
+            'Feminino')
+          ParentBackground = True
+          TabOrder = 2
+          Values.Strings = (
+            'M'
+            'F')
+        end
+        object DBCB_Estado_Civil: TDBComboBox
+          Left = 66
+          Top = 73
+          Width = 145
+          Height = 21
+          CharCase = ecLowerCase
+          DataField = 'ESTADO_CIVIL_PACIENTE'
+          DataSource = DS_Generico
+          ItemHeight = 13
+          Items.Strings = (
+            'solteiro'
+            'casado'
+            'separado'
+            'divorciado'
+            'viuvo'
+            'uniao estavel'
+            'luciano')
+          TabOrder = 5
+        end
+        object DBM_Observacao: TDBMemo
+          Left = 69
+          Top = 147
+          Width = 142
+          Height = 51
+          DataField = 'OBSERVACOES_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 6
+        end
+        object DBE_Profissao: TDBEdit
+          Left = 55
+          Top = 120
+          Width = 121
+          Height = 21
+          DataField = 'PROFISSAO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 4
+        end
+        object DBE_RG: TDBEdit
+          Left = 365
+          Top = 7
+          Width = 121
+          Height = 21
+          DataField = 'RG_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 1
+        end
+        object DBE_Dt_Nascimento: TDBEdit
+          Left = 365
+          Top = 45
+          Width = 121
+          Height = 21
+          DataField = 'DT_NASCIMENTO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 3
+        end
+      end
+      object Tab_Contato: TTabSheet
+        Caption = 'Contato'
+        ImageIndex = 1
+        object Label7: TLabel
+          Left = 16
+          Top = 13
+          Width = 45
+          Height = 13
+          Caption = 'Endere'#231'o'
+        end
+        object Label8: TLabel
+          Left = 16
+          Top = 46
+          Width = 28
+          Height = 13
+          Caption = 'Bairro'
+        end
+        object Label9: TLabel
+          Left = 16
+          Top = 79
+          Width = 33
+          Height = 13
+          Caption = 'Cidade'
+        end
+        object Label10: TLabel
+          Left = 16
+          Top = 145
+          Width = 42
+          Height = 13
+          Caption = 'Telefone'
+        end
+        object Label11: TLabel
+          Left = 16
+          Top = 112
+          Width = 19
+          Height = 13
+          Caption = 'Cep'
+        end
+        object Label12: TLabel
+          Left = 318
+          Top = 145
+          Width = 33
+          Height = 13
+          Caption = 'Celular'
+        end
+        object Label13: TLabel
+          Left = 16
+          Top = 176
+          Width = 28
+          Height = 13
+          Caption = 'e-mail'
+        end
+        object DBE_Endereco: TDBEdit
+          Left = 67
+          Top = 10
+          Width = 409
+          Height = 21
+          CharCase = ecUpperCase
+          DataField = 'ENDERECO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 0
+        end
+        object BDE_Bairro: TDBEdit
+          Left = 67
+          Top = 43
+          Width = 409
+          Height = 21
+          CharCase = ecUpperCase
+          DataField = 'BAIRRO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 1
+        end
+        object DBE_Celular: TDBEdit
+          Left = 357
+          Top = 143
+          Width = 121
+          Height = 21
+          DataField = 'CELULAR_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 5
+        end
+        object DBE_CEP: TDBEdit
+          Left = 67
+          Top = 110
+          Width = 121
+          Height = 21
+          DataField = 'CEP_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 3
+        end
+        object DBE_email: TDBEdit
+          Left = 67
+          Top = 175
+          Width = 409
+          Height = 21
+          CharCase = ecUpperCase
+          DataField = 'EMAIL_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 6
+        end
+        object DBE_Telefone: TDBEdit
+          Left = 67
+          Top = 143
+          Width = 121
+          Height = 21
+          DataField = 'TELEFONE_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 4
+        end
+        object DBL_Cidade: TDBLookupComboBox
+          Left = 67
+          Top = 77
+          Width = 145
+          Height = 21
+          DataField = 'CIDADE_PACIENTE'
+          DataSource = DS_Generico
+          KeyField = 'CODIGO_CIDADE'
+          ListField = 'NOME_CIDADE'
+          ListSource = DS_Cidades
+          TabOrder = 2
+        end
+      end
+      object Tab_Prontuario: TTabSheet
+        Caption = 'Pontu'#225'rio'
+        ImageIndex = 2
+        object Label14: TLabel
+          Left = 16
+          Top = 8
+          Width = 70
+          Height = 13
+          Caption = 'Data Cadastro'
+        end
+        object Label15: TLabel
+          Left = 285
+          Top = 8
+          Width = 72
+          Height = 13
+          Caption = 'Data Altera'#231#227'o'
+        end
+        object Label16: TLabel
+          Left = 16
+          Top = 31
+          Width = 50
+          Height = 13
+          Caption = 'Prontu'#225'rio'
+        end
+        object DBE_Dt_Cadastro: TDBEdit
+          Left = 92
+          Top = 3
+          Width = 121
+          Height = 21
+          DataField = 'DT_CADASTRO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 0
+        end
+        object DBE_Dt_Alteracao: TDBEdit
+          Left = 363
+          Top = 3
+          Width = 121
+          Height = 21
+          DataField = 'DT_ALTERACAO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 1
+        end
+        object DBM_Prontuario: TDBMemo
+          Left = 16
+          Top = 50
+          Width = 465
+          Height = 140
+          DataField = 'PRONTUARIO_PACIENTE'
+          DataSource = DS_Generico
+          TabOrder = 2
+        end
+      end
+      object Tab_Convenios: TTabSheet
+        Caption = 'Conv'#234'nios'
+        ImageIndex = 3
+        object DBGrid1: TDBGrid
+          Left = 19
+          Top = 15
+          Width = 400
+          Height = 160
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'NOME_CONVENIO'
+              Title.Caption = 'CONV'#202'NIO'
+              Width = 400
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  inherited DS_Generico: TDataSource
+    DataSet = DM_Principal.CDS_Pacientes
+    OnDataChange = DS_GenericoDataChange
+  end
+  object DS_Cidades: TDataSource
+    DataSet = DM_Principal.CDS_Cidades
+    Left = 336
+    Top = 200
+  end
+  object SQL_Convenios: TSQLQuery
+    DataSource = DS_Generico
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'codigo_paciente'
+        ParamType = ptInput
+        Value = '-1'
+      end>
+    SQL.Strings = (
+      'select nome_paciente,nome_convenio'
+      'from convenios_pacientes, pacientes, convenios'
+      
+        'where convenios_pacientes.codigo_paciente=pacientes.codigo_pacie' +
+        'nte'
+      
+        'and convenios_pacientes.codigo_convenio=convenios.codigo_conveni' +
+        'o'
+      'and convenios_pacientes.codigo_paciente=:codigo_paciente')
+    SQLConnection = DM_Principal.SQL_ConexaoBD
+    Left = 56
+    Top = 264
+    object SQL_ConveniosNOME_PACIENTE: TWideStringField
+      FieldName = 'NOME_PACIENTE'
+      Required = True
+      Size = 50
+    end
+    object SQL_ConveniosNOME_CONVENIO: TWideStringField
+      FieldName = 'NOME_CONVENIO'
+      Required = True
+      Size = 60
+    end
+  end
+  object DSP_Convenios: TDataSetProvider
+    DataSet = SQL_Convenios
+    Left = 160
+    Top = 264
+  end
+  object CDS_Convenios: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSP_Convenios'
+    Left = 248
+    Top = 264
+    object CDS_ConveniosNOME_PACIENTE: TWideStringField
+      FieldName = 'NOME_PACIENTE'
+      Required = True
+      Size = 50
+    end
+    object CDS_ConveniosNOME_CONVENIO: TWideStringField
+      FieldName = 'NOME_CONVENIO'
+      Required = True
+      Size = 60
+    end
+  end
+  object DS_Convenios: TDataSource
+    DataSet = CDS_Convenios
+    Left = 336
+    Top = 264
+  end
+end

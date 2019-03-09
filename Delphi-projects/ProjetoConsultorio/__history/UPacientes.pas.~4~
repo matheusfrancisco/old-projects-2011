@@ -1,0 +1,61 @@
+unit UPacientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Pacientes = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Nome: TDBEdit;
+    PageControl1: TPageControl;
+    Tab_Dados: TTabSheet;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBE_CPF: TDBEdit;
+    DBRG_Sexo: TDBRadioGroup;
+    DBCB_Estado_Civil: TDBComboBox;
+    DBM_Observacao: TDBMemo;
+    DBE_Profissao: TDBEdit;
+    DBE_RG: TDBEdit;
+    DBE_Dt_Nascimento: TDBEdit;
+    Tab_Contato: TTabSheet;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    DBE_Endereco: TDBEdit;
+    BDE_Bairro: TDBEdit;
+    DBE_Celular: TDBEdit;
+    DBE_CEP: TDBEdit;
+    DBE_email: TDBEdit;
+    DBE_Telefone: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Pacientes: TFRM_Pacientes;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

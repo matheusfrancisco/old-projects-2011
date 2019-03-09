@@ -1,0 +1,24 @@
+unit UCadastro;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UPadrao, DB;
+
+type
+  TFRM_Padrao1 = class(TFRM_Padrao)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Padrao1: TFRM_Padrao1;
+
+implementation
+
+{$R *.dfm}
+
+end.

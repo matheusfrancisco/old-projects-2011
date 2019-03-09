@@ -1,0 +1,10 @@
+inherited FRM_Convenios: TFRM_Convenios
+  Caption = 'FRM_Convenios'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited TB_Cadastro: TToolBar
+    inherited DBN_Cadastro: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

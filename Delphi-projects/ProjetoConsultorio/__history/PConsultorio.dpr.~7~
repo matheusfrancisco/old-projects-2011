@@ -1,0 +1,24 @@
+program PConsultorio;
+
+uses
+  Forms,
+  UPrincipal in 'UPrincipal.pas' {FRM_Principal},
+  UPadrao in 'UPadrao.pas' {FRM_Padrao},
+  UCadastro in 'UCadastro.pas' {FRM_Cadastro},
+  UDMPrincipal in 'UDMPrincipal.pas' {DM_Principal: TDataModule},
+  UEstados in 'UEstados.pas' {FRM_Estados},
+  UCidades in 'UCidades.pas' {FRM_Cidades};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFRM_Principal, FRM_Principal);
+  Application.CreateForm(TFRM_Padrao, FRM_Padrao);
+  Application.CreateForm(TFRM_Cadastro, FRM_Cadastro);
+  Application.CreateForm(TDM_Principal, DM_Principal);
+  Application.CreateForm(TFRM_Estados, FRM_Estados);
+  Application.CreateForm(TFRM_Cidades, FRM_Cidades);
+  Application.Run;
+end.

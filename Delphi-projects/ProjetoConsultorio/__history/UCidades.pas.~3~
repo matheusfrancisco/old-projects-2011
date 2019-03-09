@@ -1,0 +1,33 @@
+unit UCidades;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls , Forms,
+  Dialogs, UCadastro, ImgList, DB, ComCtrls, ExtCtrls, DBCtrls, ToolWin, Grids,
+  DBGrids, StdCtrls, Buttons, dblookup, Mask;
+
+type
+  TFRM_Cidades = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    LBL_Estado: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBLookupCombo1: TDBLookupCombo;
+    DBE_Nome: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Cidades: TFRM_Cidades;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,50 @@
+unit UConvenios_Pacientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin;
+
+type
+  TFRM_Convenios_Pacientes = class(TFRM_Cadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    DBL_Paciente: TDBLookupComboBox;
+    DBL_Convenio: TDBLookupComboBox;
+    DS_Pacientes: TDataSource;
+    DS_Convenios: TDataSource;
+    procedure FormActivate(Sender: TObject);
+    procedure SBT_PesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Convenios_Pacientes: TFRM_Convenios_Pacientes;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+procedure TFRM_Convenios_Pacientes.FormActivate(Sender: TObject);
+begin
+  inherited;
+  DM_Principal.CarregarTodos(DM_Principal.SQL_Convenios_Pacientes, DM_Principal.CDS_Convenios_Pacientes, 'CONVENIOS_PACIENTES', 'CODIGO_PACIENTE');
+  DM_Principal.CarregarTodos(DM_Principal.SQL_Pacientes, DM_Principal.CDS_Pacientes, 'PACIENTES', 'NOME_PACIENTE');
+  DM_Principal.CarregarTodos(DM_Principal.SQL_Convenios, DM_Principal.CDS_Convenios, 'CONVENIOS', 'NOME_CONVENIO');
+end;
+
+procedure TFRM_Convenios_Pacientes.SBT_PesquisarClick(Sender: TObject);
+var campo: string;
+begin
+  inherited;
+
+end;
+
+end.

@@ -1,0 +1,30 @@
+unit UConvenios;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, ComCtrls, ExtCtrls, DBCtrls, ToolWin, Grids,
+  DBGrids, StdCtrls, Buttons;
+
+type
+  TFRM_Convenios = class(TFRM_Cadastro)
+    LBL_Codigo: TLabel;
+    LBL_Nome: TLabel;
+    LBL_Descricao: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Convenios: TFRM_Convenios;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+end.

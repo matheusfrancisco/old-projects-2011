@@ -1,0 +1,136 @@
+unit UConsultas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UCadastro, ImgList, DB, Grids, DBGrids, StdCtrls, Buttons, ComCtrls,
+  ExtCtrls, DBCtrls, ToolWin, Mask;
+
+type
+  TFRM_Consultas = class(TFRM_Cadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBE_Codigo: TDBEdit;
+    DBE_Data: TDBEdit;
+    DBL_Paciente: TDBLookupComboBox;
+    DBL_Medico: TDBLookupComboBox;
+    DBL_Convenio: TDBLookupComboBox;
+    DS_Paciente: TDataSource;
+    DS_Medico: TDataSource;
+    DS_Convenio: TDataSource;
+    procedure DBL_PacienteCloseUp(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure DS_GenericoDataChange(Sender: TObject; Field: TField);
+    procedure BT_NovoClick(Sender: TObject);
+    procedure BT_SalvarClick(Sender: TObject);
+    procedure SBT_PesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_Consultas: TFRM_Consultas;
+
+implementation
+
+uses UDMPrincipal;
+
+{$R *.dfm}
+
+procedure TFRM_Consultas.BT_NovoClick(Sender: TObject);
+begin
+  inherited;
+ DS_Generico.DataSet.FieldByName('CODIGO_CONSULTA').AsInteger :=0;
+ DBL_Paciente.SetFocus;
+end;
+
+procedure TFRM_Consultas.BT_SalvarClick(Sender: TObject);
+begin
+  inherited;
+   DBE_COdigo.SetFocus;
+end;
+
+procedure TFRM_Consultas.DBL_PacienteCloseUp(Sender: TObject);
+begin
+  inherited;
+  DM_Principal.SQL_Paciente_Convenio.Close;
+  DM_Principal.SQL_Paciente_Convenio.Params[0].AsInteger:=DM_Principal.CDS_PacientesCODIGO_PACIENTE.AsInteger;
+  DM_Principal.SQL_Paciente_Convenio.Open;
+  DM_Principal.CDS_Paciente_Convenio.Close;
+  DM_Principal.CDS_Paciente_Convenio.Open;
+end;
+
+procedure TFRM_Consultas.DS_GenericoDataChange(Sender: TObject; Field: TField);
+begin
+  inherited;
+  DM_Principal.SQL_Paciente_Convenio.Close;
+  DM_Principal.SQL_Paciente_Convenio.Params[0].AsInteger:=DM_Principal.CDS_ConsultasCODIGO_PACIENTE.AsInteger;
+  DM_Principal.SQL_Paciente_Convenio.Open;
+  DM_Principal.CDS_Paciente_Convenio.Close;
+  DM_Principal.CDS_Paciente_Convenio.Open;
+
+end;
+
+procedure TFRM_Consultas.FormActivate(Sender: TObject);
+begin
+  inherited;
+   DM_Principal.CarregarTodos(DM_Principal.SQL_Consultas,
+      DM_Principal.CDS_Consultas, ' CONSUTLAS', ' CODIGO_CONSULTA');
+
+    DM_Principal.CarregarTodos(DM_Principal.SQL_Pacientes,
+      DM_Principal.CDS_Pacientes, ' PACIENTES', 'NOME_PACIENTE');
+
+    DM_Principal.CarregarTodos(DM_Principal.SQL_Medicos,
+      DM_Principal.CDS_Medicos, 'MEDICOS', ' NOME_MEDICO');
+
+    DM_Principal.SQL_Paciente_Convenio.Close;
+    DM_Principal.SQL_Paciente_Convenio.Params[0].AsInteger:=DM_Principal.CDS_ConsultasCODIGO_PACIENTE.AsInteger;
+    DM_Principal.SQL_Paciente_Convenio.Open;
+    DM_Principal.CDS_Paciente_Convenio.Close;
+    DM_Principal.CDS_Paciente_Convenio.Open;
+
+    EDT_Consulta.Clear;
+end;
+
+procedure TFRM_Consultas.SBT_PesquisarClick(Sender: TObject);
+  var campo: string;
+begin
+  inherited;
+  DM_Principal.CDS_Consultas.Close;
+  DM_Principal.SQL_Consultas.SQL.Clear;
+  DM_Principal.SQL_Consultas.Params.Clear;
+  DM_Principal.SQL_Consultas.SQL.Add('SELECT * FROM CONSULTAS WHERE');
+
+  campo:=UpperCase(CBX_Consulta.Items[CBX_Consulta.ItemIndex]);
+
+  case CBX_TipoConsulta.ItemIndex of
+    0: begin
+      if TipoDado=1
+        then DM_Principal.SQL_Consultas.SQL.Add(campo + ' = '+ EDT_Consulta.Text);
+      if TipoDado=2
+        then DM_Principal.SQL_Consultas.SQL.Add(campo + ' LIKE ' + CHR(39) +
+          EDT_Consulta.Text + CHR(39));
+      if TipoDado=3
+        then DM_Principal.SQL_Consultas.SQL.Add(campo + ' = ' + CHR(39) +
+          EDT_Consulta.Text + CHR(39));
+       end;
+
+    1: DM_Principal.SQL_Consultas.SQL.Add(campo + ' LIKE ' + CHR(39) +
+      UpperCase(EDT_Consulta.Text) + '%'+ CHR(39));
+
+    2: DM_Principal.SQL_Consultas.SQL.Add(campo + ' LIKE ' + CHR(39) +
+      '%' + UpperCase(EDT_Consulta.Text) + '%'+ CHR(39));
+  end;
+
+  DM_Principal.CDS_Consultas.Open;
+  if DM_Principal.CDS_Consultas.IsEmpty
+    then MessageDlg('Nada selecionado para o filtro.',mtInformation, [mbOK], 0);
+end;
+
+end.
